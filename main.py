@@ -1,3 +1,7 @@
+# ANALISIS DE DATOS, UTILIZANDO VISUALIZACIÓN DE DATOS Y CORRELACION PARA DETERMINAR QUÉ PERFIL DE PASAJERO DEL TITANIC
+# TUVO LA MAYOR PROBABILIDAD DE SOBREVIVIR
+
+# IMPORTAR LIBRERIAS
 import os
 import webbrowser
 import pandas as pd
@@ -132,9 +136,7 @@ plt.close()
 
 print("Graficas de distribucion guardadas en:", CARPETA)
 
-# ============================================================
 # 6. ANALISIS DE CORRELACION
-# ============================================================
 matriz_corr = df_codificado.corr(numeric_only=True)
 print("\nCorrelacion de cada variable con 'Survived':")
 print(matriz_corr['Survived'].sort_values(ascending=False))
@@ -146,9 +148,7 @@ plt.tight_layout()
 plt.savefig(os.path.join(CARPETA, "07_matriz_correlacion.png"), dpi=150)
 plt.close()
 
-# ============================================================
 # 7. VISUALIZACIONES - supervivencia cruzada con otras variables
-# ============================================================
 
 # Supervivencia por sexo
 plt.figure(figsize=(6, 4))
@@ -198,6 +198,7 @@ plt.close()
 print("Graficas de supervivencia guardadas en:", CARPETA)
 
 # 8. TABLA HTML CON LOS DATOS YA LIMPIOS
+
 
 def mostrar_tabla_datos_limpios(dataframe, abrir_navegador=True):
     """Muestra los datos limpios en una tabla HTML en el navegador."""
